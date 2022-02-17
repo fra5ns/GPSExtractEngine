@@ -166,7 +166,7 @@ namespace GPSExtractEngine
         {
             try
             {
-                _clientTempMongoRead = new MongoClient(setting.tempmongodb.ServerAddr + setting.tempmongodb.DBName);
+                _clientTempMongoRead = new MongoClient(setting.tempmongodb.ServerAddr);
                 _dbTempMongoRead = _clientTempMongoRead.GetDatabase(setting.tempmongodb.DBName);
                 _clientTempMongoRead.Cluster.DescriptionChanged += ClusterTempMongoRead_DescriptionChanged;
 
@@ -180,7 +180,7 @@ namespace GPSExtractEngine
         {
             try
             {
-                _clientTempMongoWrite = new MongoClient(setting.tempmongodb.ServerAddr + setting.tempmongodb.DBName);
+                _clientTempMongoWrite = new MongoClient(setting.tempmongodb.ServerAddr);
                 _dbTempMongoWrite = _clientTempMongoWrite.GetDatabase(setting.tempmongodb.DBName);
                 _clientTempMongoWrite.Cluster.DescriptionChanged += ClusterTempMongoWrite_DescriptionChanged;
             }

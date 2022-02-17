@@ -35,6 +35,9 @@
             this.toolStripLastQuery = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripLastObjectID = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripTotalThread = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripDel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripRecPerMinute = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripExtractPerMin = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnStartProses = new System.Windows.Forms.Button();
             this.bwQueryMongo1 = new System.ComponentModel.BackgroundWorker();
             this.tmrQueryMongo = new System.Windows.Forms.Timer(this.components);
@@ -49,19 +52,16 @@
             this.lblLogFinal = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.bwSaveCache = new System.ComponentModel.BackgroundWorker();
-            this.toolStripDel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripRecPerMinute = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripExtractPerMin = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnExtract = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtMsg
             // 
-            this.txtMsg.Location = new System.Drawing.Point(16, 15);
-            this.txtMsg.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.txtMsg.Location = new System.Drawing.Point(8, 8);
+            this.txtMsg.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtMsg.Name = "txtMsg";
-            this.txtMsg.Size = new System.Drawing.Size(1123, 1078);
+            this.txtMsg.Size = new System.Drawing.Size(564, 562);
             this.txtMsg.TabIndex = 89;
             this.txtMsg.Text = "";
             // 
@@ -75,10 +75,10 @@
             this.toolStripDel,
             this.toolStripRecPerMinute,
             this.toolStripExtractPerMin});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1117);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 429);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1424, 37);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(712, 22);
             this.statusStrip1.TabIndex = 90;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -87,32 +87,51 @@
             this.toolStripLastQuery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.toolStripLastQuery.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripLastQuery.Name = "toolStripLastQuery";
-            this.toolStripLastQuery.Size = new System.Drawing.Size(140, 32);
+            this.toolStripLastQuery.Size = new System.Drawing.Size(69, 17);
             this.toolStripLastQuery.Text = "Last Query :";
             // 
             // toolStripLastObjectID
             // 
             this.toolStripLastObjectID.BackColor = System.Drawing.Color.Lime;
             this.toolStripLastObjectID.Name = "toolStripLastObjectID";
-            this.toolStripLastObjectID.Size = new System.Drawing.Size(156, 32);
+            this.toolStripLastObjectID.Size = new System.Drawing.Size(77, 17);
             this.toolStripLastObjectID.Text = "Last ObjectID";
             // 
             // toolStripTotalThread
             // 
             this.toolStripTotalThread.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.toolStripTotalThread.Name = "toolStripTotalThread";
-            this.toolStripTotalThread.Size = new System.Drawing.Size(147, 32);
+            this.toolStripTotalThread.Size = new System.Drawing.Size(74, 17);
             this.toolStripTotalThread.Text = "Total Thread";
+            // 
+            // toolStripDel
+            // 
+            this.toolStripDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.toolStripDel.Name = "toolStripDel";
+            this.toolStripDel.Size = new System.Drawing.Size(24, 17);
+            this.toolStripDel.Text = "Del";
+            // 
+            // toolStripRecPerMinute
+            // 
+            this.toolStripRecPerMinute.Name = "toolStripRecPerMinute";
+            this.toolStripRecPerMinute.Size = new System.Drawing.Size(65, 17);
+            this.toolStripRecPerMinute.Text = "Per Minute";
+            // 
+            // toolStripExtractPerMin
+            // 
+            this.toolStripExtractPerMin.Name = "toolStripExtractPerMin";
+            this.toolStripExtractPerMin.Size = new System.Drawing.Size(42, 17);
+            this.toolStripExtractPerMin.Text = "Extract";
             // 
             // btnStartProses
             // 
             this.btnStartProses.BackColor = System.Drawing.Color.OldLace;
             this.btnStartProses.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartProses.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnStartProses.Location = new System.Drawing.Point(1172, 55);
-            this.btnStartProses.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.btnStartProses.Location = new System.Drawing.Point(586, 29);
+            this.btnStartProses.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnStartProses.Name = "btnStartProses";
-            this.btnStartProses.Size = new System.Drawing.Size(182, 81);
+            this.btnStartProses.Size = new System.Drawing.Size(91, 42);
             this.btnStartProses.TabIndex = 91;
             this.btnStartProses.Text = "Start Proses";
             this.btnStartProses.UseVisualStyleBackColor = false;
@@ -133,9 +152,10 @@
             // 
             this.lblTotalRaw.AutoSize = true;
             this.lblTotalRaw.BackColor = System.Drawing.Color.Yellow;
-            this.lblTotalRaw.Location = new System.Drawing.Point(1167, 302);
+            this.lblTotalRaw.Location = new System.Drawing.Point(584, 157);
+            this.lblTotalRaw.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalRaw.Name = "lblTotalRaw";
-            this.lblTotalRaw.Size = new System.Drawing.Size(108, 25);
+            this.lblTotalRaw.Size = new System.Drawing.Size(56, 13);
             this.lblTotalRaw.TabIndex = 92;
             this.lblTotalRaw.Text = "Total Raw";
             this.lblTotalRaw.Click += new System.EventHandler(this.lblTotalRaw_Click);
@@ -144,9 +164,10 @@
             // 
             this.lblAmwellQueue.AutoSize = true;
             this.lblAmwellQueue.BackColor = System.Drawing.Color.Yellow;
-            this.lblAmwellQueue.Location = new System.Drawing.Point(1167, 369);
+            this.lblAmwellQueue.Location = new System.Drawing.Point(584, 192);
+            this.lblAmwellQueue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAmwellQueue.Name = "lblAmwellQueue";
-            this.lblAmwellQueue.Size = new System.Drawing.Size(150, 25);
+            this.lblAmwellQueue.Size = new System.Drawing.Size(75, 13);
             this.lblAmwellQueue.TabIndex = 93;
             this.lblAmwellQueue.Text = "Amwell Queue";
             // 
@@ -159,9 +180,10 @@
             // 
             this.lblTeltoQueue.AutoSize = true;
             this.lblTeltoQueue.BackColor = System.Drawing.Color.Yellow;
-            this.lblTeltoQueue.Location = new System.Drawing.Point(1167, 437);
+            this.lblTeltoQueue.Location = new System.Drawing.Point(584, 227);
+            this.lblTeltoQueue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTeltoQueue.Name = "lblTeltoQueue";
-            this.lblTeltoQueue.Size = new System.Drawing.Size(130, 25);
+            this.lblTeltoQueue.Size = new System.Drawing.Size(66, 13);
             this.lblTeltoQueue.TabIndex = 94;
             this.lblTeltoQueue.Text = "Telto Queue";
             // 
@@ -193,9 +215,10 @@
             // 
             this.lblLogFinal.AutoSize = true;
             this.lblLogFinal.BackColor = System.Drawing.Color.Yellow;
-            this.lblLogFinal.Location = new System.Drawing.Point(1167, 513);
+            this.lblLogFinal.Location = new System.Drawing.Point(584, 267);
+            this.lblLogFinal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogFinal.Name = "lblLogFinal";
-            this.lblLogFinal.Size = new System.Drawing.Size(101, 25);
+            this.lblLogFinal.Size = new System.Drawing.Size(50, 13);
             this.lblLogFinal.TabIndex = 95;
             this.lblLogFinal.Text = "Log Final";
             // 
@@ -204,10 +227,10 @@
             this.button1.BackColor = System.Drawing.Color.OldLace;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(1172, 872);
-            this.button1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.button1.Location = new System.Drawing.Point(586, 453);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(182, 81);
+            this.button1.Size = new System.Drawing.Size(91, 42);
             this.button1.TabIndex = 96;
             this.button1.Text = "Check Var";
             this.button1.UseVisualStyleBackColor = false;
@@ -219,34 +242,15 @@
             this.bwSaveCache.WorkerSupportsCancellation = true;
             this.bwSaveCache.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwSaveCache_DoWork);
             // 
-            // toolStripDel
-            // 
-            this.toolStripDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.toolStripDel.Name = "toolStripDel";
-            this.toolStripDel.Size = new System.Drawing.Size(51, 32);
-            this.toolStripDel.Text = "Del";
-            // 
-            // toolStripRecPerMinute
-            // 
-            this.toolStripRecPerMinute.Name = "toolStripRecPerMinute";
-            this.toolStripRecPerMinute.Size = new System.Drawing.Size(132, 32);
-            this.toolStripRecPerMinute.Text = "Per Minute";
-            // 
-            // toolStripExtractPerMin
-            // 
-            this.toolStripExtractPerMin.Name = "toolStripExtractPerMin";
-            this.toolStripExtractPerMin.Size = new System.Drawing.Size(85, 32);
-            this.toolStripExtractPerMin.Text = "Extract";
-            // 
             // btnExtract
             // 
             this.btnExtract.BackColor = System.Drawing.Color.OldLace;
             this.btnExtract.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExtract.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExtract.Location = new System.Drawing.Point(1172, 161);
-            this.btnExtract.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.btnExtract.Location = new System.Drawing.Point(586, 84);
+            this.btnExtract.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnExtract.Name = "btnExtract";
-            this.btnExtract.Size = new System.Drawing.Size(182, 81);
+            this.btnExtract.Size = new System.Drawing.Size(91, 42);
             this.btnExtract.TabIndex = 97;
             this.btnExtract.Text = "Stop Extract";
             this.btnExtract.UseVisualStyleBackColor = false;
@@ -254,9 +258,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1424, 1154);
+            this.ClientSize = new System.Drawing.Size(712, 451);
             this.Controls.Add(this.btnExtract);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblLogFinal);
@@ -267,6 +271,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.txtMsg);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Extract GPS Raw Data";
             this.Load += new System.EventHandler(this.Form1_Load);
