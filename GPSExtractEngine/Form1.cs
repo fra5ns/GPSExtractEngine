@@ -664,7 +664,10 @@ namespace GPSExtractEngine
                                 case "16": // RFID N+1
                                     rfid = fnc.HexNumericStringToASCII(sV.Substring(2));
                                     break;
-                                case "2F":
+                                case "2F": //load sensor
+                                    input_analog = Convert.ToSingle(Convert.ToInt16(sV, 16) / 100.0);
+                                    break;
+                                case "1B": //fuel ultrasonic sensor, default report with AIN1
                                     input_analog = Convert.ToSingle(Convert.ToInt16(sV, 16) / 100.0);
                                     break;
                             }
@@ -748,6 +751,7 @@ namespace GPSExtractEngine
                     lat = Convert.ToSingle(Math.Round(-1 * (Convert.ToInt16(tmp) + Convert.ToSingle(data._lat.Substring(3)) / 60000), 6));
                 }
                 else
+
                 {
                     tmp = Convert.ToInt16(data._lat.Substring(0, 3)).ToString(); // lat degree
                     lat = Convert.ToSingle(Math.Round((Convert.ToInt16(tmp) + Convert.ToSingle(data._lat.Substring(3)) / 60000), 6));
